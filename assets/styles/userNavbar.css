@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("./GAPI-ColorTheme.css");
+
+.userNavbar {
+  width: 100%;
+  display: flex;
+  background: var(--default-strip-bg) !important;
+  justify-content: space-between;
+  color: var(--default-white-color);
+  position: fixed;
+  z-index: 100;
+  padding: 10px;
+}
+.userNavList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
