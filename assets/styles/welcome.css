@@ -1,0 +1,59 @@
+.tab-slider--nav {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+.tab-slider--tabs {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  border-radius: 35px;
+  overflow: hidden;
+  background: #fff;
+  height: 35px;
+  user-select: none;
+}
+
+.tab-slider--tabs:after {
+  content: "";
+  width: 50%;
+  background: var(--default-strip-bg);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 250ms ease-in-out;
+  border-radius: 35px;
+}
+.tab-slider--tabsslide:after {
+  left: 50%;
+}
+
+.tab-slider--trigger {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+  color: var(--default-strip-bg);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 11px 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 250ms ease-in-out;
+  user-select: none;
+}
+.tab-slider--body {
+  margin-bottom: 20px;
+}
+
+.tab-slider--triggeractive {
+  color: #fff;
+}
+.searchFlightContainer {
+  width: 40%;
+}

@@ -3,16 +3,22 @@
 
 .userNavbar {
   width: 100%;
-  display: flex;
   background: var(--default-strip-bg) !important;
-  justify-content: space-between;
   color: var(--default-white-color);
   position: fixed;
   z-index: 100;
   padding: 10px;
+  top: 0;
+}
+.userNavbarFlex {
+  display: flex;
+  justify-content: space-between;
 }
 .userNavList {
   list-style: none;
   display: flex;
   align-items: center;
+}
+.userNavList li {
+  cursor: pointer;
 }

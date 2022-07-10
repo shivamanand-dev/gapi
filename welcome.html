@@ -22,18 +22,179 @@
   </head>
   <body>
     <div>
-      <!-- User Navbar -->
-      <iframe
-        src="./assets/staticUI/userNavbar.html"
-        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
-      ></iframe>
       <!-- Background -->
       <iframe
         src="./assets/staticUI/background.html"
         onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
       ></iframe>
+      <!-- User Navbar -->
+      <div class="userNavbar px-5">
+        <div class="container userNavbarFlex">
+          <div></div>
+          <div>
+            <ul class="userNavList m-0">
+              <li class="px-5">₹ 12000</li>
+              <li style="padding-right: 3rem">Recharge</li>
+              <li class="dropdownUserNavList">
+                <div class="dropdown">
+                  <span
+                    class="dropdown-toggle"
+                    type="button"
+                    id="dropdownUserNavList"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    GAPI Infotech (GBB100)
+                  </span>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownUserNavList"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img src="./assets/images/svg/person.svg" alt="" />
+                        <span
+                          class="px-1"
+                          style="color: #30426a; font-weight: 500"
+                        >
+                          Profile
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="./assets/images/svg/box-arrow-right.svg"
+                          alt=""
+                        />
+                        <span
+                          class="px-1"
+                          style="color: #d83838; font-weight: 500"
+                        >
+                          Logout
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navbar -->
+      <div class="navGap">
+        <iframe
+          src="./assets/staticUI/mainNavbar.html"
+          onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+        ></iframe>
+      </div>
+
       <!-- Main Content Goes Here -->
 
+      <div class="container d-flex justify-content-between mTop-5">
+        <div>
+          <div class="searchFlightContainer">
+            <div class="tab-slider--nav">
+              <ul class="tab-slider--tabs">
+                <li
+                  class="tab-slider--trigger tab-slider--triggeractive"
+                  rel="tab1"
+                >
+                  One Way
+                </li>
+                <li class="tab-slider--trigger" rel="tab2">Round Trip</li>
+              </ul>
+            </div>
+            <div class="tab-slider--container">
+              <div id="tab1" class="tab-slider--body">
+                <div class="oneWayForm">
+                  <form class="login-form front">
+                    <p class="loginTo">
+                      Login to <br />
+                      <span style="font-weight: 600">b2b@gapiinfotech.com</span>
+                    </p>
+                    <div class="mb-3">
+                      <label class="form-label">Email address:</label>
+                      <div class="input-group">
+                        <span
+                          class="input-group-text bg-white formInput"
+                          id="basic-addon1"
+                          ><img src="./assets/images/svg/person.svg" alt=""
+                        /></span>
+                        <input
+                          type="email"
+                          class="form-control formInput loginEmail"
+                          placeholder="name@example.com"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Password:</label>
+                      <div class="input-group">
+                        <span
+                          class="input-group-text bg-white formInput"
+                          id="basic-addon1"
+                          ><img src="./assets/images/svg/key.svg" alt=""
+                        /></span>
+                        <input
+                          type="password"
+                          class="form-control formInput loginPassword"
+                          placeholder="Password"
+                          style="border-right: none"
+                        />
+                        <span
+                          class="input-group-text bg-white formInput"
+                          id="showPassword"
+                          style="border-left: none; cursor: pointer"
+                          ><img src="./assets/images/svg/eye.svg" alt=""
+                        /></span>
+                      </div>
+                      <div class="forgotPassword mt-1">
+                        <p><a href="#">Forgot Password?</a></p>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn primary-btn mt-3 logInButton"
+                        disabled="true"
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <div class="signUp-btn">
+                      <p class="m-0 p-0">Looking for a Agency ID?</p>
+                      <p
+                        id="switchLoginButton"
+                        style="
+                          cursor: pointer;
+                          color: #556ee6;
+                          width: max-content;
+                        "
+                      >
+                        Sign Up here (If New User)
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div id="tab2" class="tab-slider--body">
+                <h2>Second Tab</h2>
+                <p>
+                  Cum sociis natoque penatibus et magnis dis parturient montes,
+                  nascetur ridiculus mus. Cras mattis consectetur purus sit amet
+                  fermentum. Nulla vitae elit libero, a pharetra augue. Cras
+                  mattis consectetur purus sit amet fermentum. Aenean eu leo
+                  quam. Pellentesque ornare sem lacinia quam venenatis
+                  vestibulum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>d</div>
+      </div>
       <!-- Footer -->
       <iframe
         src="./assets/staticUI/footer.html"
@@ -45,8 +206,9 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"
       ></script>
-    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <div>dfgsd</div>
+      <script src="./assets/scripts/welcome.js"></script>
+    </div>
   </body>
 </html>
