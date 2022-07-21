@@ -23,10 +23,12 @@
   <body>
     <div>
       <!-- Background -->
-      <iframe
-        src="./assets/staticUI/background.html"
-        onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
-      ></iframe>
+      <div class="fixedBackground">
+        <iframe
+          src="./assets/staticUI/background.html"
+          onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+        ></iframe>
+      </div>
       <!-- User Navbar -->
       <div class="userNavbar px-5">
         <div class="container userNavbarFlex">
@@ -93,108 +95,502 @@
 
       <!-- Main Content Goes Here -->
 
-      <div class="container d-flex justify-content-between mTop-5">
-        <div>
-          <div class="searchFlightContainer">
-            <div class="tab-slider--nav">
-              <ul class="tab-slider--tabs">
-                <li
-                  class="tab-slider--trigger tab-slider--triggeractive"
-                  rel="tab1"
-                >
-                  One Way
-                </li>
-                <li class="tab-slider--trigger" rel="tab2">Round Trip</li>
-              </ul>
-            </div>
-            <div class="tab-slider--container">
-              <div id="tab1" class="tab-slider--body">
-                <div class="oneWayForm">
-                  <form class="login-form front">
-                    <p class="loginTo">
-                      Login to <br />
-                      <span style="font-weight: 600">b2b@gapiinfotech.com</span>
-                    </p>
-                    <div class="mb-3">
-                      <label class="form-label">Email address:</label>
-                      <div class="input-group">
-                        <span
-                          class="input-group-text bg-white formInput"
-                          id="basic-addon1"
-                          ><img src="./assets/images/svg/person.svg" alt=""
-                        /></span>
-                        <input
-                          type="email"
-                          class="form-control formInput loginEmail"
-                          placeholder="name@example.com"
-                        />
+      <div class="mainContent">
+        <div class="container d-flex justify-content-between mTop-5">
+          <div class="searchFlightForm">
+            <div class="searchFlightContainer p-3">
+              <div class="tab-slider--nav">
+                <ul class="tab-slider--tabs">
+                  <li
+                    class="tab-slider--trigger tab-slider--triggeractive"
+                    rel="tab1"
+                  >
+                    One Way
+                  </li>
+                  <li class="tab-slider--trigger" rel="tab2">Round Trip</li>
+                </ul>
+              </div>
+              <div class="tab-slider--container">
+                <div id="tab1" class="tab-slider--body">
+                  <div class="flightSearchForm">
+                    <form class="login-form front">
+                      <!-- Inputs -->
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/takeOff.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="email"
+                            class="form-control formInput"
+                            placeholder="(DEL) Delhi, India"
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Password:</label>
-                      <div class="input-group">
-                        <span
-                          class="input-group-text bg-white formInput"
-                          id="basic-addon1"
-                          ><img src="./assets/images/svg/key.svg" alt=""
-                        /></span>
-                        <input
-                          type="password"
-                          class="form-control formInput loginPassword"
-                          placeholder="Password"
-                          style="border-right: none"
-                        />
-                        <span
-                          class="input-group-text bg-white formInput"
-                          id="showPassword"
-                          style="border-left: none; cursor: pointer"
-                          ><img src="./assets/images/svg/eye.svg" alt=""
-                        /></span>
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/landing.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="text"
+                            class="form-control formInput"
+                            placeholder="(BOM) Mumbai,India"
+                          />
+                        </div>
                       </div>
-                      <div class="forgotPassword mt-1">
-                        <p><a href="#">Forgot Password?</a></p>
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/calendar2-date.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="text"
+                            class="form-control formInput"
+                            placeholder="Depart On"
+                          />
+                        </div>
                       </div>
 
+                      <!-- Button trigger modal -->
                       <button
                         type="button"
-                        class="btn primary-btn mt-3 logInButton"
-                        disabled="true"
+                        class="btn primary-btn mb-3 launchModalBtn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="border-radius: 10px"
                       >
-                        Login
+                        <span class="title"> TRAVELLERS & CLASS </span>
+                        <p class="travellerCount p-0 m-0 mt-2">1 Traveller</p>
+                        <p class="travellerClass">Economy</p>
                       </button>
-                    </div>
-                    <div class="signUp-btn">
-                      <p class="m-0 p-0">Looking for a Agency ID?</p>
-                      <p
-                        id="switchLoginButton"
-                        style="
-                          cursor: pointer;
-                          color: #556ee6;
-                          width: max-content;
-                        "
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
                       >
-                        Sign Up here (If New User)
-                      </p>
-                    </div>
-                  </form>
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">
+                                TRAVELLERS & CLASS
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                              <div class="travellerSelect">
+                                <!-- Adults -->
+                                <span>ADULTS (12y +)</span>
+                                <ul
+                                  class="list-group list-group-horizontal mb-2"
+                                >
+                                  <li class="selected">1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>9</li>
+                                  <li>9+</li>
+                                </ul>
+                                <!-- Childrens -->
+                                <span>CHILDREN (2y - 12y )</span>
+                                <ul
+                                  class="list-group list-group-horizontal mb-2"
+                                >
+                                  <li class="selected">0</li>
+                                  <li>1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>8+</li>
+                                </ul>
+
+                                <!-- INFANTS -->
+                                <span>INFANTS (below 2y)</span>
+                                <ul class="list-group list-group-horizontal">
+                                  <li class="selected">0</li>
+                                  <li>1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>8+</li>
+                                </ul>
+                              </div>
+                              <div class="sittingClass">
+                                <p class="title m-0 mt-2">
+                                  COOL! NOW CHOOSE TRAVEL CLASS
+                                </p>
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option1"
+                                  autocomplete="off"
+                                  checked
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option1"
+                                  >Economy</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option2"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option2"
+                                  >Premium Economy</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option3"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option3"
+                                  >Business</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option4"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option4"
+                                  >First</label
+                                >
+                              </div>
+                            </div>
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn primary-btn">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Select Fare Type -->
+                      <select
+                        class="form-select form-select-md mb-3"
+                        aria-label=".form-select-md example"
+                        style="border-radius: 10px"
+                      >
+                        <option selected>Regular Fare</option>
+                        <option value="1">Armed Forces Fares</option>
+                        <option value="2">Student Fares</option>
+                        <option value="3">Senior Citizen Fares</option>
+                      </select>
+
+                      <!-- Btn -->
+                      <button type="button" class="btn primary-btn">
+                        Search
+                      </button>
+                    </form>
+                  </div>
                 </div>
-              </div>
-              <div id="tab2" class="tab-slider--body">
-                <h2>Second Tab</h2>
-                <p>
-                  Cum sociis natoque penatibus et magnis dis parturient montes,
-                  nascetur ridiculus mus. Cras mattis consectetur purus sit amet
-                  fermentum. Nulla vitae elit libero, a pharetra augue. Cras
-                  mattis consectetur purus sit amet fermentum. Aenean eu leo
-                  quam. Pellentesque ornare sem lacinia quam venenatis
-                  vestibulum.
-                </p>
+                <div id="tab2" class="tab-slider--body">
+                  <div class="flightSearchForm">
+                    <form class="login-form front">
+                      <!-- Inputs -->
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/takeOff.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="email"
+                            class="form-control formInput"
+                            placeholder="(DEL) Delhi, India"
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/landing.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="text"
+                            class="form-control formInput"
+                            placeholder="(BOM) Mumbai,India"
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/calendar2-date.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="text"
+                            class="form-control formInput"
+                            placeholder="Depart On"
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text bg-white formInput"
+                            id="basic-addon1"
+                            ><img
+                              src="./assets/images/svg/calendar2-date.svg"
+                              width="16px"
+                              alt=""
+                          /></span>
+                          <input
+                            type="text"
+                            class="form-control formInput"
+                            placeholder="Return On"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Button trigger modal -->
+                      <button
+                        type="button"
+                        class="btn primary-btn mb-3 launchModalBtn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="border-radius: 10px"
+                      >
+                        <span class="title"> TRAVELLERS & CLASS </span>
+                        <p class="travellerCount p-0 m-0 mt-2">1 Traveller</p>
+                        <p class="travellerClass">Economy</p>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">
+                                TRAVELLERS & CLASS
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                              <div class="travellerSelect">
+                                <!-- Adults -->
+                                <span>ADULTS (12y +)</span>
+                                <ul
+                                  class="list-group list-group-horizontal mb-2"
+                                >
+                                  <li class="selected">1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>9</li>
+                                  <li>9+</li>
+                                </ul>
+                                <!-- Childrens -->
+                                <span>CHILDREN (2y - 12y )</span>
+                                <ul
+                                  class="list-group list-group-horizontal mb-2"
+                                >
+                                  <li class="selected">0</li>
+                                  <li>1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>8+</li>
+                                </ul>
+
+                                <!-- INFANTS -->
+                                <span>INFANTS (below 2y)</span>
+                                <ul class="list-group list-group-horizontal">
+                                  <li class="selected">0</li>
+                                  <li>1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>5</li>
+                                  <li>6</li>
+                                  <li>7</li>
+                                  <li>8</li>
+                                  <li>8+</li>
+                                </ul>
+                              </div>
+                              <div class="sittingClass">
+                                <p class="title m-0 mt-2">
+                                  COOL! NOW CHOOSE TRAVEL CLASS
+                                </p>
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option1"
+                                  autocomplete="off"
+                                  checked
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option1"
+                                  >Economy</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option2"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option2"
+                                  >Premium Economy</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option3"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option3"
+                                  >Business</label
+                                >
+
+                                <input
+                                  type="radio"
+                                  class="btn-check"
+                                  name="options"
+                                  id="option4"
+                                  autocomplete="off"
+                                />
+                                <label
+                                  class="btn btn-outline-primary"
+                                  for="option4"
+                                  >First</label
+                                >
+                              </div>
+                            </div>
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn primary-btn">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Select Fare Type -->
+                      <select
+                        class="form-select form-select-md mb-3"
+                        aria-label=".form-select-md example"
+                        style="border-radius: 10px"
+                      >
+                        <option selected>Regular Fare</option>
+                        <option value="1">Armed Forces Fares</option>
+                        <option value="2">Student Fares</option>
+                        <option value="3">Senior Citizen Fares</option>
+                      </select>
+
+                      <!-- Btn -->
+                      <button type="button" class="btn primary-btn">
+                        Search
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <div>d</div>
         </div>
-        <div>d</div>
       </div>
+
       <!-- Footer -->
       <iframe
         src="./assets/staticUI/footer.html"
