@@ -3,20 +3,23 @@ body {
   background-color: #85b9dd;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  z-index: -999999999;
+  /* width: 100%;
+  height: 100%; */
 }
 
-* {
+/* * {
   position: relative;
-}
+} */
 
 .frame {
   width: 500px;
   height: auto;
   margin: 15% auto 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
+  z-index: -99999;
 }
 
 svg {
@@ -110,7 +113,7 @@ svg {
  * Clouds
  */
 .clouds {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   top: 0;
   left: 0;
@@ -118,6 +121,7 @@ svg {
   bottom: 0;
   overflow: hidden;
   transform: translateZ(0);
+  z-index: -9999;
 }
 
 .cloud {
