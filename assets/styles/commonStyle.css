@@ -43,3 +43,15 @@ body {
 .mTop-5 {
   margin-top: 5rem;
 }
+
+ul li,
+ul li a {
+  cursor: pointer;
+}
+.fixedBackground {
+  position: relative;
+}
+button:focus,
+label {
+  box-shadow: none !important;
+}
