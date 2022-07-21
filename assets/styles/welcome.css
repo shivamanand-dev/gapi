@@ -1,3 +1,12 @@
+body {
+  height: 95vh;
+}
+.mainContent {
+  z-index: 1000;
+}
+.searchFlightForm {
+  width: 320px;
+}
 .tab-slider--nav {
   width: 100%;
   float: left;
@@ -55,5 +64,58 @@
   color: #fff;
 }
 .searchFlightContainer {
-  width: 40%;
+  background: rgba(255, 255, 255, 0.668);
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px 5px rgba(44, 44, 44, 0.356);
+}
+
+.launchModalBtn {
+  height: 100px;
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+  text-align: left;
+}
+.launchModalBtn p {
+  color: var(--subtitle-color);
+}
+.launchModalBtn .title {
+  text-decoration: underline;
+}
+
+/* Modal Body */
+.sittingClass .title,
+.travellerSelect {
+  font-weight: 700;
+}
+
+.travellerSelect ul {
+  font-weight: 400;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.travellerSelect ul li {
+  list-style: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+  border: 1px solid var(--default-strip-bg);
+}
+.btn-outline-primary {
+  color: var(--default-strip-bg);
+  border-color: var(--default-strip-bg);
+}
+
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary:hover {
+  background-color: var(--default-strip-bg);
+  border-color: var(--default-strip-bg);
+}
+.selected {
+  background-color: var(--default-strip-bg);
+  border-color: var(--default-strip-bg);
+  color: #fff;
 }
